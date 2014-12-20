@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lite Syntax Highlighting</title>
+	<link rel="stylesheet" href="style.css" type="text/css">	
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	
+	<style>
+		body {
+			background:#fafafa;
+			margin:0;
+		}
+		.wrapper {
+			width:960px; 
+			margin:0px auto;
+			padding:20px;
+			background:#fefefe;
+			border:1px solid #f1f1f1;
+		}
+		h1 {margin:0 0 20px 0;}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>Lite Syntax Highlighting example</h1>
+		
+		<h2>PHP</h2>
+		<pre class="php">
+class Route
+{
+    static function start()
+    {
+		// default
+        $controller_name = 'Main';
+        $action_name = 'index';
+		
+		// cut get requests 
+		$url = $_SERVER['REQUEST_URI'];
+        if (strpos($url, '?'))
+			{
+				 $url = substr($url, 0, strpos($url, '?'));
+			}
+		
+		$routes = explode('/', $url);
+        // get controller name
+        if ( !empty($routes[1]) )
+        {	
+            $controller_name = $routes[1];
+        }
+        
+        // get action name
+        if ( !empty($routes[2]) )
+        {
+            $action_name = $routes[2];
+        }
+		</pre>
+		
+		<h2>HTML</h2>
+		<pre class="html">
+<head>
+<title>Task-killer</title>
+<link href="/css/main.css" type="text/css" rel="stylesheet">
+<link href="/css/style.css" type="text/css" rel="stylesheet">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<div id="wrapper" align="center">
+		<div id="header" >	
+			<div id="logo"></div>			
+			<div id="nav">
+			</div> 
+			<div id="banner1"><img src="/img/banner.gif" alt=""></div>
+		</div>
+	<div id="middle">
+		<div id="contentprofile">
+			<div class="text">
+			</div>
+		</div>		
+		<div id="clear"></div>
+		</pre>
+		
+		<h2>CSS</h2>
+		<pre class="css">
+.pricetable {width:100%; padding:1px solid #aaa;}
+.pricetable tr:first-child  td{text-align:center;}
+.pricetable td {padding-bottom:2px; padding-top:2px; text-align:right;}
+.pricetd {padding-right:2px; text-align:left !important;}
+
+#middle {width:1012px;  min-height:300px; display:block; text-align:left; margin:0 auto; }
+
+#content {float:left; width:750px; margin:0px; padding:0px;  text-align:left;}
+#contentprofile {  width:1000px; margin:0px; padding:0px;  text-align:left;}
+
+#sidebar{ float: left; width:243px; margin:0px; padding:0px;}
+.text {margin:5px 10px 5px 10px; font-size:10pt;}
+.block1title {font:17pt arial; color:#666666; padding-top:15px; text-align:center;}
+.block1content { padding:5px 20px 5px 20px;}
+
+.block1{margin:0px; margin-bottom:20px; width:243px;height:246px; background:url('../img/block1.png') no-repeat;}
+.blockcontent {background:#f4f4f4; padding:10px;}
+
+.loginProfile  {text-align:center;}
+.loginProfile h2 { font:17pt arial; color:#666666; padding-top:15px; text-align:center; font-weight:normal;}
+.loginProfile table {width:600px; margin:0px auto;}
+.loginProfile table td.loginput {text-align:center; color: #666666; font-size: 11pt; }
+.loginProfile table td.loginput input {border:0px; width:204px; height:33px; background:url('../img/login2.png') no-repeat; padding-left:5px;}
+
+.prlink {font-size: 14px; margin-top:5px;}
+.prlink li {margin-top:3px;}
+.balans {color:#6d0000; font-size: 15px; font-weight: 700; line-height: 15px; margin: 10px 0px 5px 0px;}
+		</pre>		
+		
+		<h2>JS</h2>
+		<pre class="js">function Calc(path)
+{
+	if (!CheckSubj()) { return; }
+	path += "?n=1&t="+CalcT(fdate, ftime, mf.ldate.value, mf.ltime.value)+ "&subj="+GetSubj();
+	CalcSum(path, sum);
+}
+function GetSubj()
+{
+	var i = 0; var bool = false;
+	while (document.mf.subj[i]!=null)
+	{
+		if (document.mf.subj[i].checked) { return document.mf.subj[i].value; }
+		i++;
+	}
+	return -1;
+}
+function IsOk(thing)
+{
+	if (thing.style.color == "#000000") { return true; }
+	else return (false);
+}
+		</pre>
+	</div>
+<script type="text/javascript" src="liteHighlighting.js"></script>
+</body>
+</html>
