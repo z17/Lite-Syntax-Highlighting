@@ -1,7 +1,3 @@
-
-var q = $('pre').html();
-		console.log(q);
-		
 /*
 Name: Lite Syntax Highlighting
 URI: http://blweb.ru/blog/prostaya-podsvetka-koda-na-sajjt
