@@ -11,18 +11,19 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Lite Syntax Highlighting: php, html, css, js
 
 == Description ==
-Плагин позволяет легко добавить подсветку синтаксиса кода в записи вашего блога.
+The Plugin makes it easy to add syntax highlighting of code in your blog posts.
+It adds some buttons to editor, which generate special html tags to turn on syntax highlighting:
+<pre class="html"></pre> for example.
 
-Поддерживается подсветка следующего кода:
+The plugin supports highlighting:
 * PHP
 * HTML
 * CSS
 * JavaScript
 
-Плагин переведён на языки:
+Languages:
 * English
-* Русский
-
+* Р СѓСЃСЃРєРёР№
 
 == Installation ==
 1. Upload the plugin files to the "/wp-content/plugins/" directory or install the plugin through the WordPress plugins screen directly..
@@ -30,12 +31,22 @@ Lite Syntax Highlighting: php, html, css, js
 1. Use the Settings -> Syntax Highlighting screen to configure the plugin
 
 == Frequently Asked Questions ==
-= Подсветка какого кода? =
-PHP, HTML, CSS и JavaScript
+= What code is highlighted? =
+PHP, HTML, CSS and JavaScript
 
-= Могу я поучаствовать в разработке? =
-Да, публичный репозиторий находится по адресу https://github.com/z17/Lite-Syntax-Highlighting
+== Screenshots ==
+1. Example for PHP code
+2. Settings page
+3. Editor
+
+= How can I help? =
+There are public repository: https://github.com/z17/Lite-Syntax-Highlighting
 
 == Changelog ==
+
+= 0.2 =
+* Add languages support
+
 = 0.1 =
 * Initial release.
+

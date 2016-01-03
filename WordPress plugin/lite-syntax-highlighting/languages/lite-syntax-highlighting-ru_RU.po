@@ -1,0 +1,33 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: lite-syntax-highlighting 1.0\n"
+"POT-Creation-Date: 2016-01-04 01:40+0300\n"
+"PO-Revision-Date: 2016-01-04 01:40+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: C:\\xampp\\htdocs\\blweb\\www\\wp-content\\plugins"
+"\\lite-syntax-highlighting\n"
+
+#: C:\xampp\htdocs\blweb\www\wp-content\plugins\lite-syntax-highlighting/LiteSyntaxHighlighting.php:107
+msgid "Lite Syntax Highlighting"
+msgstr "Lite Syntax Highlighting"
+
+#: C:\xampp\htdocs\blweb\www\wp-content\plugins\lite-syntax-highlighting/LiteSyntaxHighlighting.php:108
+msgid "Select buttons"
+msgstr "Выберите кнопки в редактор"
+
+#: C:\xampp\htdocs\blweb\www\wp-content\plugins\lite-syntax-highlighting/LiteSyntaxHighlighting.php:128
+msgid "Submit"
+msgstr "Сохранить"
+
+#: C:\xampp\htdocs\blweb\www\wp-content\plugins\lite-syntax-highlighting/LiteSyntaxHighlighting.php:154
+msgid "Settings"
+msgstr "Настройки"

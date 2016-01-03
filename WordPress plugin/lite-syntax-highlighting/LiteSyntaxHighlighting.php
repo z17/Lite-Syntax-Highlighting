@@ -1,11 +1,14 @@
 <?php
 class LiteSyntaxHighlighting
 {
-
-
     const SYNTAX_HIGHLIGHTING_OPTIONS = "syntax_highlighting_options";
     const RESOURCES_NAME = 'lite-syntax-highlighting';
+    const LANGUAGE_DOMAIN = 'lite-syntax-highlighting';
+    const OPTIONS_PAGE = 'highlighting';
 
+    public static function languagesSetup() {
+        load_plugin_textdomain(self::LANGUAGE_DOMAIN, false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+    }
     public static function liteSyntaxHighlightingResources()
     {
         $cssFile = plugins_url('/css/style.css', __FILE__);
@@ -52,7 +55,7 @@ class LiteSyntaxHighlighting
 
     public static function liteSyntaxHighlightingAddConfigPag()
     {
-        add_options_page('Lite Syntax Highlighting', 'Syntax Highlighting', 'manage_options', 'highlighting', array('LiteSyntaxHighlighting', 'addOptionsPage'));
+        add_options_page('Lite Syntax Highlighting', 'Syntax Highlighting', 'manage_options', self::OPTIONS_PAGE, array('LiteSyntaxHighlighting', 'addOptionsPage'));
     }
 
     public static function addOptionsPage()
@@ -101,8 +104,8 @@ class LiteSyntaxHighlighting
 
         $options = get_option(self::SYNTAX_HIGHLIGHTING_OPTIONS);
         ?>
-        <h2>Lite Syntax Highlighting</h2>
-        <p>Отображать конпки в редакторе:</p>
+        <h1><?=__("Lite Syntax Highlighting", self::LANGUAGE_DOMAIN)?></h1>
+        <h2><?=__("Select buttons", self::LANGUAGE_DOMAIN)?></h2>
         <form method="post">
             <table>
                 <tr>
@@ -122,7 +125,7 @@ class LiteSyntaxHighlighting
                     <td><input type="checkbox" name="backlite_js" value="1" <?=($options['js'] ? 'checked' : '')?>></td>
                 </tr>
             </table>
-            <input type="submit" value="Сохранить">
+            <input type="submit" value="<?=__('Submit', self::LANGUAGE_DOMAIN)?>">
             <input type="hidden" name="submit" value="true">
         </form>
 
@@ -145,5 +148,12 @@ class LiteSyntaxHighlighting
     public static function uninstall()
     {
         delete_option(self::SYNTAX_HIGHLIGHTING_OPTIONS);
+    }
+
+    public static function addSettingsLink($links) {
+        $settings_link = '<a href="options-general.php?page='.self::OPTIONS_PAGE.'">'. __("Settings", self::LANGUAGE_DOMAIN) .'</a>';
+        array_unshift($links, $settings_link);
+        return $links;
+
     }
 }

@@ -121,7 +121,7 @@ function backlightJs(txt) {
             comments.push(str);
             return '~~~COMM' + l + '~~~';
         })
-        .replace(/(\(|\s|\!|^)(function|this|var|if|for)(\)|\s|\!|=|\()/g, '$1<span class="code-operator">$2</span>$3')
+        .replace(/(\(|\s|\!|^)(break|default|function|return|var|case|delete|if|switch|void|catch|do|in|this|while|const|else|instanceof|throw|continue|finally|try|debugger|for|new|typeof)(\)|\s|\!|=|\()/g, '$1<span class="code-operator">$2</span>$3')
         .replace(/(=|\s|\(|\t)"([^(code\-)].*?)"/g, '$1<span class="code-quotes">"$2"</span>')
         .replace(/\'([^(code\-)].*?)\'/g, '<span class="code-quotes">\'$1\'</span>')
         .replace(/~~~(COMM)([0-9]*?)~~~/g, function (reg, str, num) {
