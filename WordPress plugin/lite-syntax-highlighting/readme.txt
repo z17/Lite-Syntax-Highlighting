@@ -12,18 +12,19 @@ Lite Syntax Highlighting: php, html, css, js
 
 == Description ==
 The Plugin makes it easy to add syntax highlighting of code in your blog posts.
+
 It adds some buttons to editor, which generate special html tags to turn on syntax highlighting:
-<pre class="html"></pre> for example.
+&lt;pre class="html"&gt;&lt;/pre&gt; for example.
 
 The plugin supports highlighting:
-* PHP
-* HTML
-* CSS
-* JavaScript
+*   PHP
+*   HTML
+*   CSS
+*   JavaScript
 
 Languages:
-* English
-* Русский
+*   English
+*   Русский
 
 == Installation ==
 1. Upload the plugin files to the "/wp-content/plugins/" directory or install the plugin through the WordPress plugins screen directly..
@@ -31,16 +32,17 @@ Languages:
 1. Use the Settings -> Syntax Highlighting screen to configure the plugin
 
 == Frequently Asked Questions ==
+
 = What code is highlighted? =
 PHP, HTML, CSS and JavaScript
+
+= How can I help? =
+There are public repository: https://github.com/z17/Lite-Syntax-Highlighting
 
 == Screenshots ==
 1. Example for PHP code
 2. Settings page
 3. Editor
-
-= How can I help? =
-There are public repository: https://github.com/z17/Lite-Syntax-Highlighting
 
 == Changelog ==
 
@@ -50,3 +52,7 @@ There are public repository: https://github.com/z17/Lite-Syntax-Highlighting
 = 0.1 =
 * Initial release.
 
+== Upgrade Notice ==
+
+= 0.2 =
+* Add multi-language support
