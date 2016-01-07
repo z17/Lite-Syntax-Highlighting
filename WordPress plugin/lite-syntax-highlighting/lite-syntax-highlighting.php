@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Lite Syntax Highlighting
-Plugin URI: http://blweb.ru
+Plugin URI: http://blweb.ru/plugin-lite-syntax-highlighting
 Description: Lite Syntax Highlighting for PHP, JS, CSS ans HTML code
 Version: 0.2
 Author: Maksim Iliukovich

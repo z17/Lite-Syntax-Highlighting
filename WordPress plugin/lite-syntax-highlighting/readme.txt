@@ -17,14 +17,14 @@ It adds some buttons to editor, which generate special html tags to turn on synt
 &lt;pre class="html"&gt;&lt;/pre&gt; for example.
 
 The plugin supports highlighting:
-*   PHP
-*   HTML
-*   CSS
-*   JavaScript
+* PHP
+* HTML
+* CSS
+* JavaScript
 
 Languages:
-*   English
-*   Русский
+* English
+* Русский
 
 == Installation ==
 1. Upload the plugin files to the "/wp-content/plugins/" directory or install the plugin through the WordPress plugins screen directly..
