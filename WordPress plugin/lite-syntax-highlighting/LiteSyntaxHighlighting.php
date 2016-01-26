@@ -1,26 +1,36 @@
 <?php
 class LiteSyntaxHighlighting
 {
-    const SYNTAX_HIGHLIGHTING_OPTIONS = "syntax_highlighting_options";
-    const RESOURCES_NAME = 'lite-syntax-highlighting';
-    const LANGUAGE_DOMAIN = 'lite-syntax-highlighting';
-    const OPTIONS_PAGE = 'highlighting';
+    private static $SYNTAX_HIGHLIGHTING_OPTIONS = "syntax_highlighting_options";
+    private static $RESOURCES_NAME = 'lite-syntax-highlighting';
+    private static $LANGUAGE_DOMAIN = 'lite-syntax-highlighting';
+    private static $OPTIONS_PAGE = 'highlighting';
+    private static $STYLES = array(
+        'light' => '/css/light.css',
+        'dark' => '/css/dark.css',
+    );
+    private static $DEFAULT_STYLE = 'light';
 
     public static function languagesSetup() {
-        load_plugin_textdomain(self::LANGUAGE_DOMAIN, false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+        load_plugin_textdomain(self::$LANGUAGE_DOMAIN, false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
     }
     public static function liteSyntaxHighlightingResources()
     {
-        $cssFile = plugins_url('/css/style.css', __FILE__);
+        $options = get_option(self::$SYNTAX_HIGHLIGHTING_OPTIONS);
+        if (isset(self::$STYLES[$options['style']])) {
+            $cssFile = plugins_url(self::$STYLES[$options['style']], __FILE__);
+        } else {
+            $cssFile = plugins_url(self::$STYLES[self::$DEFAULT_STYLE], __FILE__);
+        }
         $jsFile = plugins_url('/js/liteHighlighting.js', __FILE__);
-        wp_enqueue_style(self::RESOURCES_NAME, $cssFile, false, '0.1');
-        wp_enqueue_script(self::RESOURCES_NAME, $jsFile, false, '0.1');
+        wp_enqueue_style(self::$RESOURCES_NAME, $cssFile, false, '0.1');
+        wp_enqueue_script(self::$RESOURCES_NAME, $jsFile, false, '0.1');
     }
 
     public static function liteSyntaxHighlightingAddButtons()
     {
         if (wp_script_is('quicktags')) {
-            $options = get_option(self::SYNTAX_HIGHLIGHTING_OPTIONS);
+            $options = get_option(self::$SYNTAX_HIGHLIGHTING_OPTIONS);
             ?>
             <script type="text/javascript">
 
@@ -55,7 +65,7 @@ class LiteSyntaxHighlighting
 
     public static function liteSyntaxHighlightingAddConfigPag()
     {
-        add_options_page('Lite Syntax Highlighting', 'Syntax Highlighting', 'manage_options', self::OPTIONS_PAGE, array('LiteSyntaxHighlighting', 'addOptionsPage'));
+        add_options_page('Lite Syntax Highlighting', 'Syntax Highlighting', 'manage_options', self::$OPTIONS_PAGE, array('LiteSyntaxHighlighting', 'addOptionsPage'));
     }
 
     public static function addOptionsPage()
@@ -68,6 +78,7 @@ class LiteSyntaxHighlighting
             $flagHTML = $_POST['backlite_html'];
             $flagCSS = $_POST['backlite_css'];
             $flagJS = $_POST['backlite_js'];
+            $style = $_POST['style'];
 
             if ($flagPHP == 1) {
                 $flagPHP = true;
@@ -93,19 +104,24 @@ class LiteSyntaxHighlighting
                 $flagJS = false;
             }
 
+            if (!in_array($style, array("light", "dark"))) {
+                $style = self::$DEFAULT_STYLE;   // default
+            }
+
             $options = array(
                 'php' => $flagPHP,
                 'js' => $flagJS,
                 'css' => $flagCSS,
-                'html' => $flagHTML
+                'html' => $flagHTML,
+                'style' => $style,
             );
-            update_option(self::SYNTAX_HIGHLIGHTING_OPTIONS, $options);
+            update_option(self::$SYNTAX_HIGHLIGHTING_OPTIONS, $options);
         }
 
-        $options = get_option(self::SYNTAX_HIGHLIGHTING_OPTIONS);
+        $options = get_option(self::$SYNTAX_HIGHLIGHTING_OPTIONS);
         ?>
-        <h1><?=__("Lite Syntax Highlighting", self::LANGUAGE_DOMAIN)?></h1>
-        <h2><?=__("Select buttons", self::LANGUAGE_DOMAIN)?></h2>
+        <h1><?=__("Lite Syntax Highlighting", self::$LANGUAGE_DOMAIN)?></h1>
+        <h2><?=__("Select buttons", self::$LANGUAGE_DOMAIN)?></h2>
         <form method="post">
             <table>
                 <tr>
@@ -124,8 +140,20 @@ class LiteSyntaxHighlighting
                     <td>JavaScript:</td>
                     <td><input type="checkbox" name="backlite_js" value="1" <?=($options['js'] ? 'checked' : '')?>></td>
                 </tr>
+                <tr>
+                    <td><?=__('Select style', self::$LANGUAGE_DOMAIN)?>:</td>
+                    <td>
+                        <select name="style">
+                            <option value="light" <?=($options['style'] == 'light' ? 'selected' : '')?>>Light</option>
+                            <option value="dark" <?=($options['style'] == 'dark' ? 'selected' : '')?>>Dark</option>
+                        </select>
+                    </td>
+                </tr>
             </table>
-            <input type="submit" value="<?=__('Submit', self::LANGUAGE_DOMAIN)?>">
+            <p>
+
+            </p>
+            <input type="submit" value="<?=__('Submit', self::$LANGUAGE_DOMAIN)?>">
             <input type="hidden" name="submit" value="true">
         </form>
 
@@ -134,24 +162,45 @@ class LiteSyntaxHighlighting
 
     public static function activation()
     {
-        if (get_option(self::SYNTAX_HIGHLIGHTING_OPTIONS) === false) {
+        if (get_option(self::$SYNTAX_HIGHLIGHTING_OPTIONS) === false) {
             $options = array(
                 'php' => true,
                 'js' => true,
                 'css' => true,
-                'html' => true
+                'html' => true,
+                'style' => self::$DEFAULT_STYLE,
             );
-            add_option(self::SYNTAX_HIGHLIGHTING_OPTIONS, $options);
+
+        } else {
+            // validate
+            $options = get_option(self::$SYNTAX_HIGHLIGHTING_OPTIONS);
+            if (!in_array($options['php'], array(true, false))) {
+                $options['php'] = true;
+            }
+            if (!in_array($options['js'], array(true, false))) {
+                $options['js'] = true;
+            }
+            if (!in_array($options['html'], array(true, false))) {
+                $options['html'] = true;
+            }
+            if (!in_array($options['css'], array(true, false))) {
+                $options['css'] = true;
+            }
+            if (!in_array($options['style'], self::$STYLES)) {
+                $options['style'] = self::$DEFAULT_STYLE;
+            }
         }
+
+        add_option(self::$SYNTAX_HIGHLIGHTING_OPTIONS, $options);
     }
 
     public static function uninstall()
     {
-        delete_option(self::SYNTAX_HIGHLIGHTING_OPTIONS);
+        delete_option(self::$SYNTAX_HIGHLIGHTING_OPTIONS);
     }
 
     public static function addSettingsLink($links) {
-        $settings_link = '<a href="options-general.php?page='.self::OPTIONS_PAGE.'">'. __("Settings", self::LANGUAGE_DOMAIN) .'</a>';
+        $settings_link = '<a href="options-general.php?page='.self::$OPTIONS_PAGE.'">'. __("Settings", self::$LANGUAGE_DOMAIN) .'</a>';
         array_unshift($links, $settings_link);
         return $links;
 

@@ -75,6 +75,7 @@ function backlightPHP(txt) {
      //   .replace(/(\$[a-zA-Z0-9-_]*?)(\s|,|-|;|\[|\.|{|\(|\)|\])/g, '<span class="code-var">$1</span>$2')
         .replace(/(\$\w*?)(\s|\W)/g, '<span class="code-var">$1</span>$2')
         .replace(/(\s|\!|\(|^|\t)(function|class|private|implode|new|sizeof|json_encode|json_decode|array|array_unique|array_map|array_search|strtotime|unset|array_merge|public|__construct|array|foreach|class|static|empty|else|elseif|if|break|return|exit|isset|while|explode|date|echo|as|file_get_contents|preg_split)(\s|\(|$|;)/g, '$1<span class="code-operator">$2</span>$3')
+
         .replace(/(&lt;\?php)/g, '<span class="code-php">$1</span>')
         .replace(/(\?&gt;)/g, '<span class="code-php">$1</span>')
         .replace(/~~~(COMM)([0-9]*?)~~~/g, function (reg, str, num) {
@@ -130,7 +131,6 @@ function backlightJs(txt) {
     ;
     return txt;
 }
-
 jQuery(document).ready(function () {
     jQuery('pre.html, pre.css, pre.php, pre.js').each(function () {
 
@@ -140,6 +140,8 @@ jQuery(document).ready(function () {
         };
         var txt = jQuery(this).html();
         txt = txt
+            .replace("<!--?php", '<?php')
+            .replace("?-->", '?>')
             .replace(/[\<\>]/g, function (m) {
                 return safe[m];
             });
