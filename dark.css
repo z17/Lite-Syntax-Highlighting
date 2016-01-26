@@ -1,0 +1,64 @@
+pre, code {
+    padding: 5px;
+    background: #2b2b2b;
+    font-size: 12px;
+    position: relative;
+    max-height: 500px;
+    overflow: auto;
+    display: block;
+    word-wrap: normal;
+    color:#a9b7c6;
+}
+
+pre.php:before {
+    content: '<php>';
+}
+
+pre.js:before {
+    content: '<js>';
+}
+
+pre.css:before {
+    content: '<css>';
+}
+
+pre.html:before {
+    content: '<html>';
+}
+pre.php:before, pre.js:before, pre.css:before, pre.html:before {
+    position: absolute;
+    display: block;
+    top: 5px;
+    right: 5px;
+    font-size: 16px;
+    color: #05D105;
+    opacity: 0.5;
+}
+
+pre.html .code-comments, pre.php .code-comments, pre.css .code-comments, pre.js .code-comments {
+    color: #808080;
+}
+
+pre.html .code-tags, pre.php .code-tags {
+    color: #e8bf6a;
+}
+
+pre.html .code-attribute, pre.php .code-attribute {
+    color: #bababa;
+}
+
+pre.html .code-quotes, pre.php .code-quotes, pre.js .code-quotes {
+    color: #a4c14f;
+}
+
+pre.php .code-var, pre.css .code-style {
+    color: #9876aa;
+}
+
+pre.php .code-operator, pre.php .code-php, pre.css .code-tags, pre.js .code-operator  {
+    color: #cc7832;
+}
+
+pre.css .code-class, pre.css .code-pseudo, pre.css .code-id {
+    color: #ffc66d;
+}
