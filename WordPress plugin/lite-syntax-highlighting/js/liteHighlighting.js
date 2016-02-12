@@ -72,7 +72,7 @@ function backlightPHP(txt) {
             quotes.push(str);
             return '~~~QUO' + l + '~~~';
         })
-     //   .replace(/(\$[a-zA-Z0-9-_]*?)(\s|,|-|;|\[|\.|{|\(|\)|\])/g, '<span class="code-var">$1</span>$2')
+        //   .replace(/(\$[a-zA-Z0-9-_]*?)(\s|,|-|;|\[|\.|{|\(|\)|\])/g, '<span class="code-var">$1</span>$2')
         .replace(/(\$\w*?)(\s|\W)/g, '<span class="code-var">$1</span>$2')
         .replace(/(\s|\!|\(|^|\t)(function|class|private|implode|new|sizeof|json_encode|json_decode|array|array_unique|array_map|array_search|strtotime|unset|array_merge|public|__construct|array|foreach|class|static|empty|else|elseif|if|break|return|exit|isset|while|explode|date|echo|as|file_get_contents|preg_split)(\s|\(|$|;)/g, '$1<span class="code-operator">$2</span>$3')
 
@@ -122,7 +122,7 @@ function backlightJs(txt) {
             comments.push(str);
             return '~~~COMM' + l + '~~~';
         })
-        .replace(/(\(|\s|\!|^)(break|default|function|return|var|case|delete|if|switch|void|catch|do|in|this|while|const|else|instanceof|throw|continue|finally|try|debugger|for|new|typeof)(\)|\s|\!|=|\()/g, '$1<span class="code-operator">$2</span>$3')
+        .replace(/(\(|\s|\!|^)(auto|double|int|struct|break|else|long|switch|case|enum|register|typedef|char|extern|return|union|const|float|short|unsigned|continue|for|signed|void|default|GOTO|sizeof|volatile|do|if|static|while)(\)|\s|\!|=|\()/g, '$1<span class="code-operator">$2</span>$3')
         .replace(/(=|\s|\(|\t)"([^(code\-)].*?)"/g, '$1<span class="code-quotes">"$2"</span>')
         .replace(/\'([^(code\-)].*?)\'/g, '<span class="code-quotes">\'$1\'</span>')
         .replace(/~~~(COMM)([0-9]*?)~~~/g, function (reg, str, num) {
@@ -131,6 +131,33 @@ function backlightJs(txt) {
     ;
     return txt;
 }
+
+function backlightC(txt) {
+
+    var comments = [];
+    txt = txt
+        .replace(/\/\*[\s\S]*?\*\//g, function (str) {
+            var l = comments.length;
+            comments.push(str);
+            return '~~~COMM' + l + '~~~';
+        })
+        .replace(/(^[\\]?\/\/[^\n\r]*(\n|\r\n))/g, function (str) {
+            var l = comments.length;
+            comments.push(str);
+            return '~~~COMM' + l + '~~~';
+        })
+        .replace(/(\(|\s|\!|^)(auto|struct|break|else|switch|case|enum|register|NULL|typedef|extern|return|union|const|continue|for|signed|void|default|GOTO|sizeof|volatile|do|if|static|while)(\);||\s|\!|=|\()/g, '$1<span class="code-operator">$2</span>$3')
+        .replace(/(\(|\s|\!|^)(bool|char|short|unsigned|int|long|float|double)(\)|\s|\!|=|\()/g, '$1<span class="code-types">$2</span>$3')
+        .replace(/(\(|\s|\!|^|\[)([0-9]*)(\)|;|\]|\s|\!|=|\()/g, '$1<span class="code-number">$2</span>$3')
+        .replace(/(=|\s|\(|\t)"([^(code\-)].*?)"/g, '$1<span class="code-quotes">"$2"</span>')
+        .replace(/\'([^(code\-)].*?)\'/g, '<span class="code-quotes">\'$1\'</span>')
+        .replace(/~~~(COMM)([0-9]*?)~~~/g, function (reg, str, num) {
+            return '<span class="code-comments">' + comments[num] + '</span>';
+        })
+    ;
+    return txt;
+}
+
 jQuery(document).ready(function () {
     jQuery('pre.html, pre.css, pre.php, pre.js').each(function () {
 
@@ -148,25 +175,19 @@ jQuery(document).ready(function () {
         jQuery(this).html(txt);
     });
 
-    jQuery('pre.html').each(function () {
-
-        var comments = [];
-        var quotes = [];
-        var attr = [];
+    jQuery('pre.html, pre.slh__html').each(function () {
         var txt = jQuery(this).html();
         txt = backlightHtml(txt);
         jQuery(this).html(txt);
     });
 
-    jQuery('pre.css').each(function () {
-
-        var comments = [];
+    jQuery('pre.css, pre.slh__css').each(function () {
         var txt = jQuery(this).html();
         txt = backlightCSS(txt);
         jQuery(this).html(txt);
     });
 
-    jQuery('pre.php').each(function () {
+    jQuery('pre.php, pre.slh__php').each(function () {
 
         var php = [];
         var txt = jQuery(this).html();
@@ -189,10 +210,15 @@ jQuery(document).ready(function () {
         jQuery(this).html(txt);
     });
 
-    jQuery('pre.js').each(function () {
-        var comments = [];
+    jQuery('pre.js, pre.slh__js').each(function () {
         var txt = jQuery(this).html();
         txt = backlightJs(txt);
+        jQuery(this).html(txt);
+    });
+
+    jQuery('pre.slh__c').each(function () {
+        var txt = jQuery(this).html();
+        txt = backlightC(txt);
         jQuery(this).html(txt);
     });
 

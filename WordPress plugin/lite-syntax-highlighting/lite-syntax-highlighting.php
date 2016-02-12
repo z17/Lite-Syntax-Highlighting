@@ -3,7 +3,7 @@
 Plugin Name: Lite Syntax Highlighting
 Plugin URI: http://blweb.ru/plugin-lite-syntax-highlighting
 Description: Lite Syntax Highlighting for PHP, JS, CSS ans HTML code
-Version: 0.3
+Version: 0.4
 Author: Maksim Iliukovich
 Author URI: http://blweb.ru
 */

@@ -20,6 +20,7 @@ The plugin supports highlighting:
 * HTML
 * CSS
 * JavaScript
+* C
 
 Languages:
 * English
@@ -49,6 +50,10 @@ PHP, HTML, CSS and JavaScript
 There are public repository: https://github.com/z17/Lite-Syntax-Highlighting
 
 == Changelog ==
+
+= 0.4 =
+* add basic highlight for C language
+* some refactor
 
 = 0.3 =
 * add dark style

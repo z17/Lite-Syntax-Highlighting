@@ -1,4 +1,4 @@
-pre, code {
+pre {
     padding: 5px;
     background: #2b2b2b;
     font-size: 12px;
@@ -7,25 +7,29 @@ pre, code {
     overflow: auto;
     display: block;
     word-wrap: normal;
-    color:#a9b7c6;
+    color: #a9b7c6;
 }
 
-pre.php:before {
+pre.php:before, pre.slh__php:before {
     content: '<php>';
 }
 
-pre.js:before {
+pre.js:before, pre.slh__js:before {
     content: '<js>';
 }
 
-pre.css:before {
+pre.css:before, pre.slh__css:before {
     content: '<css>';
 }
 
-pre.html:before {
+pre.html:before, pre.slh__html:before {
     content: '<html>';
 }
-pre.php:before, pre.js:before, pre.css:before, pre.html:before {
+pre.slh__c:before {
+    content: '<C>';
+}
+
+pre.php:before, pre.slh__php:before, pre.js:before, pre.slh__js:before, pre.css:before, pre.slh__css:before, pre.html:before, pre.slh__html:before, pre.slh__c:before {
     position: absolute;
     display: block;
     top: 5px;
@@ -35,30 +39,32 @@ pre.php:before, pre.js:before, pre.css:before, pre.html:before {
     opacity: 0.5;
 }
 
-pre.html .code-comments, pre.php .code-comments, pre.css .code-comments, pre.js .code-comments {
+pre .code-comments {
     color: #808080;
 }
 
-pre.html .code-tags, pre.php .code-tags {
+pre .code-tags {
     color: #e8bf6a;
 }
 
-pre.html .code-attribute, pre.php .code-attribute {
+pre .code-attribute {
     color: #bababa;
 }
 
-pre.html .code-quotes, pre.php .code-quotes, pre.js .code-quotes {
+pre .code-quotes {
     color: #a4c14f;
 }
 
-pre.php .code-var, pre.css .code-style {
+pre .code-var, pre .code-style {
     color: #9876aa;
 }
 
-pre.php .code-operator, pre.php .code-php, pre.css .code-tags, pre.js .code-operator  {
+pre .code-operator, pre .code-php, pre .code-types  {
     color: #cc7832;
 }
-
-pre.css .code-class, pre.css .code-pseudo, pre.css .code-id {
+pre .code-number {
+    color:#4d8690;
+}
+pre .code-class, pre .code-pseudo, pre .code-id {
     color: #ffc66d;
 }

@@ -39,25 +39,30 @@ class LiteSyntaxHighlighting
                 // QTags.addButton( 'идентификатор' , 'название', '<открывающий тег>', '</закрывающий тег>', 'v', 'описание', позиция(число) );
                 if ($options['php']) {
                     ?>
-                    QTags.addButton('php', 'PHP', '<pre class="php">', '</pre>', 'p', '', 999);
+                    QTags.addButton('php', 'PHP', '<pre class="slh__php">', '</pre>', 'p', '', 999);
                     <?php
                 }
                 if ($options['html']) {
                     ?>
-                    QTags.addButton('html', 'HTML', '<pre class="html">', '</pre>', 'p', '', 999);
+                    QTags.addButton('html', 'HTML', '<pre class="slh__html">', '</pre>', 'p', '', 999);
                     <?php
                 }
                 if ($options['css']) {
                     ?>
-                       QTags.addButton('css', 'CSS', '<pre class="css">', '</pre>', 'p', '', 999);
+                       QTags.addButton('css', 'CSS', '<pre class="slh__css">', '</pre>', 'p', '', 999);
                     <?php
                 }
                 if ($options['js']) {
                     ?>
-                    QTags.addButton('js', 'JS', '<pre class="js">', '</pre>', 'p', '', 999);
+                    QTags.addButton('js', 'JS', '<pre class="slh__js">', '</pre>', 'p', '', 999);
                     <?php
                 }
-                ?>
+                if ($options['c']) {
+                    ?>
+                QTags.addButton('c', 'C', '<pre class="slh__c">', '</pre>', 'p', '', 999);
+                <?php
+            }
+            ?>
             </script>
             <?php
         }
@@ -74,35 +79,12 @@ class LiteSyntaxHighlighting
         $flagSubmit = isset($_POST['submit']) ? $_POST['submit'] : false;
 
         if ($flagSubmit !== false) {
-            $flagPHP = $_POST['backlite_php'];
-            $flagHTML = $_POST['backlite_html'];
-            $flagCSS = $_POST['backlite_css'];
-            $flagJS = $_POST['backlite_js'];
+            $flagPHP = ($_POST['backlite_php'] == 1 ? true : false);
+            $flagHTML = ($_POST['backlite_html'] == 1 ? true : false);
+            $flagCSS = ($_POST['backlite_css'] == 1 ? true : false);
+            $flagJS = ($_POST['backlite_js'] == 1 ? true : false);
+            $flagC = ($_POST['backlite_c'] == 1 ? true : false);
             $style = $_POST['style'];
-
-            if ($flagPHP == 1) {
-                $flagPHP = true;
-            } else {
-                $flagPHP = false;
-            }
-
-            if ($flagHTML == 1) {
-                $flagHTML = true;
-            } else {
-                $flagHTML = false;
-            }
-
-            if ($flagCSS == 1) {
-                $flagCSS = true;
-            } else {
-                $flagCSS = false;
-            }
-
-            if ($flagJS == 1) {
-                $flagJS = true;
-            } else {
-                $flagJS = false;
-            }
 
             if (!in_array($style, array("light", "dark"))) {
                 $style = self::$DEFAULT_STYLE;   // default
@@ -113,6 +95,7 @@ class LiteSyntaxHighlighting
                 'js' => $flagJS,
                 'css' => $flagCSS,
                 'html' => $flagHTML,
+                'c' => $flagC,
                 'style' => $style,
             );
             update_option(self::$SYNTAX_HIGHLIGHTING_OPTIONS, $options);
@@ -139,6 +122,10 @@ class LiteSyntaxHighlighting
                 <tr>
                     <td>JavaScript:</td>
                     <td><input type="checkbox" name="backlite_js" value="1" <?=($options['js'] ? 'checked' : '')?>></td>
+                </tr>
+                <tr>
+                    <td>C:</td>
+                    <td><input type="checkbox" name="backlite_c" value="1" <?=($options['c'] ? 'checked' : '')?>></td>
                 </tr>
                 <tr>
                     <td><?=__('Select style', self::$LANGUAGE_DOMAIN)?>:</td>

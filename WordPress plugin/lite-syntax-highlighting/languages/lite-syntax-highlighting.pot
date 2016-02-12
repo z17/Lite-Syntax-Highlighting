@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lite-syntax-highlighting 1.0\n"
-"POT-Creation-Date: 2016-01-04 01:40+0300\n"
-"PO-Revision-Date: 2016-01-04 01:40+0300\n"
+"POT-Creation-Date: 2016-01-27 13:11+0300\n"
+"PO-Revision-Date: 2016-01-27 13:11+0300\n"
 "Last-Translator: \n"
 "Language-Team: z17 <admin@blweb.ru>\n"
 "MIME-Version: 1.0\n"
@@ -15,18 +15,22 @@ msgstr ""
 "X-Poedit-SearchPath-0: C:\\xampp\\htdocs\\blweb\\www\\wp-content\\plugins"
 "\\lite-syntax-highlighting\n"
 
-#: C:\xampp\htdocs\blweb\www\wp-content\plugins\lite-syntax-highlighting/LiteSyntaxHighlighting.php:107
+#: C:\xampp\htdocs\blweb\www\wp-content\plugins\lite-syntax-highlighting/LiteSyntaxHighlighting.php:123
 msgid "Lite Syntax Highlighting"
 msgstr ""
 
-#: C:\xampp\htdocs\blweb\www\wp-content\plugins\lite-syntax-highlighting/LiteSyntaxHighlighting.php:108
+#: C:\xampp\htdocs\blweb\www\wp-content\plugins\lite-syntax-highlighting/LiteSyntaxHighlighting.php:124
 msgid "Select buttons"
 msgstr ""
 
-#: C:\xampp\htdocs\blweb\www\wp-content\plugins\lite-syntax-highlighting/LiteSyntaxHighlighting.php:128
+#: C:\xampp\htdocs\blweb\www\wp-content\plugins\lite-syntax-highlighting/LiteSyntaxHighlighting.php:144
+msgid "Select style"
+msgstr ""
+
+#: C:\xampp\htdocs\blweb\www\wp-content\plugins\lite-syntax-highlighting/LiteSyntaxHighlighting.php:156
 msgid "Submit"
 msgstr ""
 
-#: C:\xampp\htdocs\blweb\www\wp-content\plugins\lite-syntax-highlighting/LiteSyntaxHighlighting.php:154
+#: C:\xampp\htdocs\blweb\www\wp-content\plugins\lite-syntax-highlighting/LiteSyntaxHighlighting.php:203
 msgid "Settings"
 msgstr ""
