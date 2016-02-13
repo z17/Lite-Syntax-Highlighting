@@ -43,11 +43,11 @@ pre .code-comments {
     color: #04AD04;
 }
 
-pre.html .code-tags {
+pre .code-tags {
     color: #0000ff
 }
 
-pre.html .code-attribute, pre .code-php, pre .code-class {
+pre .code-attribute, pre .code-php, pre .code-class {
     color: #ff0000;
 }
 
