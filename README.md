@@ -11,8 +11,8 @@ Also you can use it on every site, without plugin.
 Just connect the js and css files and try to write:
 
 ```HTML
-<pre class="php">CODE</pre>
-<pre class="html">CODE</pre>
-<pre class="css">CODE</pre>
-<pre class="js">CODE</pre>
+<pre class="slh__php">CODE</pre>
+<pre class="slh__html">CODE</pre>
+<pre class="slh__css">CODE</pre>
+<pre class="slh__js">CODE</pre>
 ```

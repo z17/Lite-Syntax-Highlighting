@@ -1,8 +1,8 @@
 /*
  Name: Lite Syntax Highlighting
  URI: http://blweb.ru/blog/prostaya-podsvetka-koda-na-sajjt
- Description: Lite Syntax Highlighting: php, html, css, js
- Version: 1.5
+ Description: Lite Syntax Highlighting: php, html, css, js, c
+ Version: 1.6
  Author: z-17
  Author URI: http://blweb.ru
  GitHub URI: https://github.com/z17/Lite-Syntax-Highlighting

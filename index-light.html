@@ -26,7 +26,7 @@
 		<h1>Lite Syntax Highlighting example</h1>
 		
 		<h2>PHP</h2>
-		<pre class="php">
+		<pre class="slh__php">
 class Route
 {
     static function start()
@@ -57,7 +57,7 @@ class Route
 		</pre>
 		
 		<h2>HTML</h2>
-		<pre class="html">
+		<pre class="slh__html">
 <head>
 <title>Task-killer</title>
 <link href="/css/main.css" type="text/css" rel="stylesheet">
@@ -81,10 +81,19 @@ class Route
 		</pre>
 		
 		<h2>CSS</h2>
-		<pre class="css">
-.pricetable {width:100%; padding:1px solid #aaa;}
-.pricetable tr:first-child  td{text-align:center;}
-.pricetable td {padding-bottom:2px; padding-top:2px; text-align:right;}
+		<pre class="slh__css">
+.pricetable {
+	width:100%; 
+	padding:1px solid #aaa;
+}
+.pricetable tr:first-child  td{
+	text-align:center;
+}
+.pricetable td {
+	padding-bottom:2px; 
+	padding-top:2px; 
+	text-align:right;
+}
 .pricetd {padding-right:2px; text-align:left !important;}
 
 #middle {width:1012px;  min-height:300px; display:block; text-align:left; margin:0 auto; }
@@ -104,7 +113,13 @@ class Route
 .loginProfile h2 { font:17pt arial; color:#666666; padding-top:15px; text-align:center; font-weight:normal;}
 .loginProfile table {width:600px; margin:0px auto;}
 .loginProfile table td.loginput {text-align:center; color: #666666; font-size: 11pt; }
-.loginProfile table td.loginput input {border:0px; width:204px; height:33px; background:url('../img/login2.png') no-repeat; padding-left:5px;}
+.loginProfile table td.loginput input {
+	border:0px; 
+	width:204px; 
+	height:33px; 
+	background:url('../img/login2.png') no-repeat; 
+	padding-left:5px;
+}
 
 .prlink {font-size: 14px; margin-top:5px;}
 .prlink li {margin-top:3px;}
@@ -112,7 +127,7 @@ class Route
 		</pre>		
 		
 		<h2>JS</h2>
-		<pre class="js">function Calc(path)
+		<pre class="slh__js">function Calc(path)
 {
 	if (!CheckSubj()) { return; }
 	path += "?n=1&t="+CalcT(fdate, ftime, mf.ldate.value, mf.ltime.value)+ "&subj="+GetSubj();
