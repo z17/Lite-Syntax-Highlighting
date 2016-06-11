@@ -263,9 +263,10 @@ var jsKeywords = [
 'try',
 'debugger',
 'new',
-'typeof',
+'typeof'
 ];
-function backlightHtml(txt) {
+
+function backLightHtml(txt) {
     var comments = [];
     var quotes = [];
     var attr = [];
@@ -304,7 +305,7 @@ function backlightHtml(txt) {
     ;
     return txt;
 }
-function backlightPHP(txt) {
+function backLightPHP(txt) {
     var comments = [];
     var quotes = [];
 	var phpOperatorReg = new RegExp('(\\s|\\!|\\(|^|\\t)(' + phpKeywords.join('|') + ')(\\s|\\(|$|;)', 'g');
@@ -427,7 +428,7 @@ jQuery(document).ready(function () {
     });
     jQuery('pre.html, pre.slh__html').each(function () {
         var txt = jQuery(this).html();
-        txt = backlightHtml(txt);
+        txt = backLightHtml(txt);
         jQuery(this).html(txt);
     });
     jQuery('pre.css, pre.slh__css').each(function () {
@@ -441,18 +442,18 @@ jQuery(document).ready(function () {
         txt = txt
             .replace(/&lt;\?php([\s\S]*?)\?&gt;/g, function (str) {
                 var l = php.length;
-                php.push(backlightPHP(str));
+                php.push(backLightPHP(str));
                 return '~~~PHP' + l + '~~~';
             });
         if (php.length > 0)		// если открывающих-закрывающих скобок php кода не было, значит весь код на php
         {
-            txt = backlightHtml(txt);
+            txt = backLightHtml(txt);
             txt = txt.replace(/~~~(PHP)([0-9]*?)~~~/g, function (reg, str, num) {
                 return php[num];
             });
         }
         else {
-            txt = backlightPHP(txt)
+            txt = backLightPHP(txt)
         }
         jQuery(this).html(txt);
     });

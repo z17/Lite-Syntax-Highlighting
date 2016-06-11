@@ -4,7 +4,7 @@ Tags: syntax highlighter, syntax, highlighter, highlighting, code highlighter
 Donate link: http://blweb.ru
 Requires at least: 3.0
 Tested up to: 4.4
-Stable tag: 0.4
+Stable tag: 0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,7 +42,7 @@ Styles:
 == Frequently Asked Questions ==
 
 = What code is highlighted? =
-PHP, HTML, CSS and JavaScript
+PHP, HTML, CSS, JavaScript and C
 
 = How can I help? =
 There are public repository: https://github.com/z17/Lite-Syntax-Highlighting
@@ -54,6 +54,9 @@ There are public repository: https://github.com/z17/Lite-Syntax-Highlighting
 4. Dark style
 
 == Changelog ==
+
+= 0.5 =
+* add support short codes
 
 = 0.4 =
 * add basic highlight for C language
