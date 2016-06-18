@@ -8,8 +8,14 @@ class LiteSyntaxSupporter {
                 $cssClass = LiteSyntaxHighlighting::$CSS_PREFIX . $attr['lang'];
             }
         }
+
         $content = str_replace('<', '&lt;', $content);
         $content = str_replace('>', '&gt;', $content);
         return '<pre class="' . $cssClass . '">' . $content . '</pre>';
+    }
+
+    public function wpAutoP($text) {
+        $text = do_shortcode($text);
+        return wpautop($text);
     }
 }

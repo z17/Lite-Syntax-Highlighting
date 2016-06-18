@@ -8,12 +8,16 @@ Stable tag: 0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Lite Syntax Highlighting: php, html, css, js
+Lite Syntax Highlighting: PHP, HTML, CSS, JS, C
 
 == Description ==
-The Plugin makes it easy to add syntax highlighting of code in your blog posts.
-It adds some buttons to editor, which generate special html tags to turn on syntax highlighting:
-&lt;pre class="html"&gt;&lt;/pre&gt; for example.
+The Plugin makes it easy to add syntax highlighting of code in your blog.
+It adds some buttons to editor, which generate special short code tags to turn on syntax highlighting:
+[slh-code lang="php"] for example.
+Or you can use html tags, example:
+&lt;pre class="slh__html"&gt;&lt;/pre&gt; for example.
+
+You can use shortcodes in posts and comments and also html tags everywhere.
 
 The plugin supports highlighting:
 
@@ -46,6 +50,14 @@ PHP, HTML, CSS, JavaScript and C
 
 = How can I help? =
 There are public repository: https://github.com/z17/Lite-Syntax-Highlighting
+Welcome!
+
+= How can I use it? =
+You can use special buttons in WordPress post editor, or use shortcodes like [slh-code lang="php"] to create block of code.
+Also you can just write html tags &lt;pre class="slh__php"&gt; CODE &lt;/pre&gt; where you want.
+
+= How can I ask something? =
+Open new topic in support section or you can write me email, admin@blweb.ru
 
 == Screenshots ==
 1. Example for PHP code
@@ -57,6 +69,7 @@ There are public repository: https://github.com/z17/Lite-Syntax-Highlighting
 
 = 0.5 =
 * add support short codes
+* short codes also work in comments
 
 = 0.4 =
 * add basic highlight for C language

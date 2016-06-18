@@ -8,21 +8,32 @@ Author: Maksim Iliukovich
 Author URI: http://blweb.ru
 */
 
-// todo: check work short codes in comments
-// todo: check work all langs with replace < > in PHP and not
+// todo: check work short codes in comments (html problem)
 // todo: edit readme
-// todo: test options with upload, activate and other actions
+// todo: instructions in languages files
 require_once dirname( __FILE__ ) . '/LiteSyntaxHighlighting.php';
 require_once dirname( __FILE__ ) . '/LiteSyntaxSupporter.php';
+require_once dirname( __FILE__ ) . '/LiteSyntaxOptionsPage.php';
 
 add_action( 'admin_init', 'LiteSyntaxHighlighting::languagesSetup');
 add_action( 'wp_enqueue_scripts', 'LiteSyntaxHighlighting::liteSyntaxHighlightingResources' );
 add_action( 'admin_print_footer_scripts', 'LiteSyntaxHighlighting::liteSyntaxHighlightingAddButtons' );
-add_action('admin_menu', 'LiteSyntaxHighlighting::liteSyntaxHighlightingAddConfigPag');
+add_action('admin_menu', 'LiteSyntaxOptionsPage::addConfigPage');
 
-add_filter("plugin_action_links_".plugin_basename(  __FILE__ ), 'LiteSyntaxHighlighting::addSettingsLink' );
+add_filter("plugin_action_links_".plugin_basename(  __FILE__ ), 'LiteSyntaxOptionsPage::addSettingsLink' );
 
 register_activation_hook( __FILE__, 'LiteSyntaxHighlighting::activation' );
 register_uninstall_hook( __FILE__, 'LiteSyntaxHighlighting::uninstall' );
 
 add_shortcode(LiteSyntaxSupporter::$SHORT_CODE, 'LiteSyntaxSupporter::shortCodeFunction');
+
+// we need do_shortcode before using function wpautop
+remove_filter('the_content', 'wpautop');
+add_filter('the_content', 'LiteSyntaxSupporter::wpAutoP');
+
+// todo:
+function init_common_shortcodes() {
+    add_shortcode(LiteSyntaxSupporter::$SHORT_CODE, 'LiteSyntaxSupporter::shortCodeFunction');
+}
+add_filter('comment_text', 'do_shortcode');
+
