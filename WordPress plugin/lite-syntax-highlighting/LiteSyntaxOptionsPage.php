@@ -33,8 +33,7 @@ class LiteSyntaxOptionsPage {
         $options = get_option(self::$SYNTAX_HIGHLIGHTING_OPTIONS);
         ?>
         <h1><?=__("Lite Syntax Highlighting", LiteSyntaxHighlighting::$LANGUAGE_DOMAIN)?></h1>
-        <?=__("Instructions first part", LiteSyntaxHighlighting::$LANGUAGE_DOMAIN)?>
-        <p>Плагин добавляет подстветку синтаксиса с помощью шорткодов в записях и комментариях, вы можете использовать следующие коды:</p>
+        <p><?=__("Plugin adds syntax highlight by shortcodes in posts and comments, you can use next codes for this:", LiteSyntaxHighlighting::$LANGUAGE_DOMAIN)?></p>
         <ul>
         <?php
         foreach(LiteSyntaxHighlighting::$LANGUAGES as $key => $name) {
@@ -44,8 +43,7 @@ class LiteSyntaxOptionsPage {
         }
         ?>
         </ul>
-        <?=__("Instructions second part", LiteSyntaxHighlighting::$LANGUAGE_DOMAIN)?>
-        <p>Для добавления блоков кода в произвольное место сайта вы так же можете использовать специальные html коды:</p>
+        <p><?=__("To add syntax highlight in custom place, you can also use special html codes:", LiteSyntaxHighlighting::$LANGUAGE_DOMAIN)?></p>
         <ul>
         <?php
         foreach(LiteSyntaxHighlighting::$LANGUAGES as $key => $name) {

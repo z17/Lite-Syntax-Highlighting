@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lite-syntax-highlighting 1.0\n"
-"POT-Creation-Date: 2016-06-19 17:57+0300\n"
-"PO-Revision-Date: 2016-06-19 17:57+0300\n"
+"POT-Creation-Date: 2016-06-19 17:55+0300\n"
+"PO-Revision-Date: 2016-06-19 17:56+0300\n"
 "Last-Translator:  <admin@blweb.ru>\n"
-"Language-Team: \n"
-"Language: ru_RU\n"
+"Language-Team: z17 <admin@blweb.ru>\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,6 +13,7 @@ msgstr ""
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: C:\\xampp\\htdocs\\blweb\\www\\wp-content\\plugins"
 "\\lite-syntax-highlighting\n"
 
@@ -25,38 +26,37 @@ msgid ""
 "Plugin adds syntax highlight by shortcodes in posts and comments, you can "
 "use next codes for this:"
 msgstr ""
-"Плагин добавляет подстветку синтаксиса с помощью шорткодов в записях и "
-"комментариях, вы можете использовать следующие коды:"
+"Plugin adds syntax highlight by shortcodes in posts and comments, you can "
+"use next codes for this:"
 
 #: C:\xampp\htdocs\blweb\www\wp-content\plugins\lite-syntax-highlighting/LiteSyntaxOptionsPage.php:46
 msgid ""
 "To add syntax highlight in custom place, you can also use special html codes:"
 msgstr ""
-"Для добавления блоков кода в произвольное место сайта вы также можете "
-"использовать специальные html коды:"
+"To add syntax highlight in custom place, you can also use special html codes:"
 
 #: C:\xampp\htdocs\blweb\www\wp-content\plugins\lite-syntax-highlighting/LiteSyntaxOptionsPage.php:57
 msgid "Select buttons"
-msgstr "Выберите кнопки в редактор"
+msgstr "Select buttons"
 
 #: C:\xampp\htdocs\blweb\www\wp-content\plugins\lite-syntax-highlighting/LiteSyntaxOptionsPage.php:71
 msgid "Select style"
-msgstr "Выберите стиль"
+msgstr "Select style"
 
 #: C:\xampp\htdocs\blweb\www\wp-content\plugins\lite-syntax-highlighting/LiteSyntaxOptionsPage.php:83
 msgid "Submit"
-msgstr "Сохранить"
+msgstr "Submit"
 
 #: C:\xampp\htdocs\blweb\www\wp-content\plugins\lite-syntax-highlighting/LiteSyntaxOptionsPage.php:91
 msgid "Settings"
-msgstr "Настройки"
+msgstr "Settings"
 
 #~ msgid "Instructions first part"
 #~ msgstr ""
-#~ "Плагин добавляет подстветку синтаксиса с помощью шорткодов в записях и "
-#~ "комментариях, вы можете использовать следующие коды:"
+#~ "Plugin adds syntax highlight by shortcodes in posts and comments, you can "
+#~ "use next codes for this:"
 
 #~ msgid "Instructions second part"
 #~ msgstr ""
-#~ "Для добавления блоков кода в произвольное место сайта вы также можете "
-#~ "использовать специальные html коды:"
+#~ "To add syntax highlight in custom place, you can also use special html "
+#~ "codes: "

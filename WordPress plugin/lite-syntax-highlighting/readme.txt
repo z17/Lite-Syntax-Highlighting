@@ -13,7 +13,7 @@ Lite Syntax Highlighting: PHP, HTML, CSS, JS, C
 == Description ==
 The Plugin makes it easy to add syntax highlighting of code in your blog.
 It adds some buttons to editor, which generate special short code tags to turn on syntax highlighting:
-[slh-code lang="php"] for example.
+[slh lang="php"] for example.
 Or you can use html tags, example:
 &lt;pre class="slh__html"&gt;&lt;/pre&gt; for example.
 
@@ -53,7 +53,7 @@ There are public repository: https://github.com/z17/Lite-Syntax-Highlighting
 Welcome!
 
 = How can I use it? =
-You can use special buttons in WordPress post editor, or use shortcodes like [slh-code lang="php"] to create block of code.
+You can use special buttons in WordPress post editor, or use shortcodes like [slh lang="php"] to create block of code.
 Also you can just write html tags &lt;pre class="slh__php"&gt; CODE &lt;/pre&gt; where you want.
 
 = How can I ask something? =

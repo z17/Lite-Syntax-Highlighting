@@ -1,16 +1,14 @@
 <?php
 /*
-Plugin Name: Lite Syntax Highlighting
-Plugin URI: http://blweb.ru/plugin-lite-syntax-highlighting
-Description: Lite Syntax Highlighting for PHP, JS, CSS ans HTML code
-Version: 0.5
-Author: Maksim Iliukovich
-Author URI: http://blweb.ru
+* Plugin Name: Lite Syntax Highlighting
+* Plugin URI: http://blweb.ru/plugin-lite-syntax-highlighting
+* Description: Lite Syntax Highlighting for PHP, JS, CSS ans HTML code
+* Version: 0.5
+* Author: Maksim Iliukovich
+* Text Domain: lite-syntax-highlighting
+* Author URI: http://blweb.ru
 */
 
-// todo: check work short codes in comments (html problem)
-// todo: edit readme
-// todo: instructions in languages files
 require_once dirname( __FILE__ ) . '/LiteSyntaxHighlighting.php';
 require_once dirname( __FILE__ ) . '/LiteSyntaxSupporter.php';
 require_once dirname( __FILE__ ) . '/LiteSyntaxOptionsPage.php';
@@ -31,9 +29,4 @@ add_shortcode(LiteSyntaxSupporter::$SHORT_CODE, 'LiteSyntaxSupporter::shortCodeF
 remove_filter('the_content', 'wpautop');
 add_filter('the_content', 'LiteSyntaxSupporter::wpAutoP');
 
-// todo:
-function init_common_shortcodes() {
-    add_shortcode(LiteSyntaxSupporter::$SHORT_CODE, 'LiteSyntaxSupporter::shortCodeFunction');
-}
 add_filter('comment_text', 'do_shortcode');
-

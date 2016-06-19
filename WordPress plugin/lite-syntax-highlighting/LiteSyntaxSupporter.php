@@ -1,6 +1,6 @@
 <?php
 class LiteSyntaxSupporter {
-    public static $SHORT_CODE = "slh-code";
+    public static $SHORT_CODE = "slh";
     public static function shortCodeFunction($attr, $content) {
         $cssClass = '';
         if (isset($attr['lang'])) {
