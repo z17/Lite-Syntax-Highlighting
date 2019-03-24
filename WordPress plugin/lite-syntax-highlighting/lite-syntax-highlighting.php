@@ -1,12 +1,12 @@
 <?php
 /*
 * Plugin Name: Lite Syntax Highlighting
-* Plugin URI: http://blweb.ru/plugin-lite-syntax-highlighting
+* Plugin URI: https://blweb.ru/plugin-lite-syntax-highlighting
 * Description: Lite Syntax Highlighting for PHP, JS, CSS ans HTML code
 * Version: 0.5
 * Author: Maksim Iliukovich
 * Text Domain: lite-syntax-highlighting
-* Author URI: http://blweb.ru
+* Author URI: https://blweb.ru
 */
 
 require_once dirname( __FILE__ ) . '/LiteSyntaxHighlighting.php';

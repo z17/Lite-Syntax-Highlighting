@@ -1,10 +1,10 @@
 /*
  Name: Lite Syntax Highlighting
- URI: http://blweb.ru/blog/prostaya-podsvetka-koda-na-sajjt
+ URI: https://blweb.ru/blog/prostaya-podsvetka-koda-na-sajjt
  Description: Lite Syntax Highlighting: php, html, css, js, c
  Version: 1.6
  Author: z-17
- Author URI: http://blweb.ru
+ Author URI: https://blweb.ru
  GitHub URI: https://github.com/z17/Lite-Syntax-Highlighting
  License: GPLv2 or later
  License URI: http://www.gnu.org/licenses/gpl-2.0.html
